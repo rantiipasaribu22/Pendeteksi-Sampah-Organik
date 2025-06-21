@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Deteksi Sampah Organik - YOLOv8</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2b2b2b;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 12px;
+            font-size: 16px;
+            border: 2px dashed #9e9e9e;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            background-color: #f8f8f8;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #3d8b1e, #82d14a);
+        }
+
+        .preview {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .preview img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        .label-box {
+            background: #e0f7fa;
+            border-left: 5px solid #00796b;
+            padding: 10px 15px;
+            margin: 10px auto;
+            border-radius: 6px;
+            width: fit-content;
+            color: #004d40;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deteksi Sampah Organik</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <br>
+            <button type="submit">Upload & Deteksi</button>
+        </form>
+
+        {% if filename %}
+        <div class="preview">
+            <h3>Hasil Deteksi:</h3>
+            <img src="{{ url_for('static', filename=filename) }}" alt="Hasil Deteksi">
+            <div>
+                {% for label in labels %}
+                    <div class="label-box">{{ label }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
