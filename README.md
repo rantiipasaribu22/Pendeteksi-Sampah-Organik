@@ -1,92 +1,89 @@
-**#🗑️ Organic Waste Detection System Using YOLOv8**
+# 🗑️ Organic Waste Detection System Using YOLOv8
 
-A smart web-based image classification system to automatically detect and classify organic waste using state-of-the-art YOLOv8 object detection models. The system helps support sustainable waste management by providing instant detection from user-uploaded images.
+A smart web-based image classification system to automatically detect and classify **organic waste** using YOLOv8 object detection models. This system is designed to support sustainable waste management by providing real-time organic waste recognition from user-submitted images.
 
-#🧱 Background
-Waste management is a major challenge in urban areas. Improper separation of organic and non-organic waste leads to increased environmental impact and inefficiencies in recycling. This project introduces a computer vision-based solution to assist in classifying waste by detecting organic materials from images automatically.
+---
 
-🎯 Objectives
-✅ Build a YOLOv8-based system to detect organic waste from user-submitted images
-✅ Enable detection via a clean, accessible web interface
-✅ Help raise awareness about waste sorting using real-time feedback
-✅ Provide detection results with high accuracy and speed
+## 🧱 Background
 
-📂 Dataset Information
-🧪 Organic Waste Dataset
+Urban environments face increasing challenges in waste management. Improper sorting between organic and inorganic waste often leads to inefficient recycling processes and environmental issues. This project aims to address this by using a deep learning-based detection system that can automatically classify organic waste from images, improving awareness and supporting eco-friendly practices.
 
-Source: Roboflow Universe
+---
 
-Classes: Organic waste (e.g., food scraps, leaves, etc.)
+## 🎯 Objectives
 
-Total Images: Hundreds of annotated waste images
+- ✅ Build a YOLOv8-based model to detect organic waste in images
+- ✅ Deploy a web interface for image upload and detection
+- ✅ Deliver fast and accurate feedback to users
+- ✅ Contribute to smart and sustainable waste management solutions
 
-Format: YOLOv8-compatible
+---
 
-⚙️ Implementation Process
+## 📂 Dataset Information
 
-Dataset Preparation – Images were labeled and prepared using Roboflow.
+### 🧪 Organic Waste Dataset
+- **Source:** [Roboflow Universe – Klasifikasi Sampah Berdasarkan Nama](https://universe.roboflow.com/siscer-project/klasifikasi-sampah-berdasarkan-nama/dataset/15/images?split=train)
+- **Classes:** Organic waste (e.g., food scraps, leaves, natural debris)
+- **Images:** Several hundred annotated images
+- **Format:** YOLOv8-compatible bounding boxes
 
-Model Training – YOLOv8 was trained on the labeled dataset to detect and classify organic waste.
+### 🍎 Fruit & Vegetable Dataset (Extended Classification)
+- **Source:** [Roboflow Universe – Buah Sayuran](https://universe.roboflow.com/pcb-t7dcy/buah-sayuran/dataset/1)
+- **Classes:** Various organic food items (e.g., fruits, vegetables)
+- **Use Case:** Extended organic waste classification, training augmentation
+- **Format:** YOLOv8-compatible
 
-Web Interface – Built with Flask to support image upload and detection output.
+---
 
-Integration – Detection results are shown on the web UI with bounding boxes and classification info.
+## ⚙️ Implementation Process
 
-🚀 How to Use the System (Web-Based)
-📦 1. Install Requirements
+1. **Dataset Preparation** – Labeled via Roboflow platform  
+2. **Model Training** – YOLOv8 used to train organic waste detection model  
+3. **Web Development** – Flask used to build upload and detection interface  
+4. **Model Integration** – System loads trained model and processes user images  
+5. **Visualization** – Results shown with bounding boxes and class confidence  
 
-bash
-Copy code
-pip install flask ultralytics opencv-python roboflow numpy  
-🛠️ 2. Place Trained YOLOv8 Weights
+---
 
-bash
-Copy code
-weights/best.pt  # Model trained to detect organic waste  
-🖥️ 3. Run the Application
+## 🚀 How to Use the System (Web-Based)
 
-bash
-Copy code
-python app.py  
-🔗 Open in Browser:
+### 📦 1. Install Requirements
+```bash
+pip install flask ultralytics opencv-python roboflow numpy
+```
+### 🛠️ 2. Place Trained YOLOv8 Weights
+```bash
+weights/best.pt  # Model trained for organic waste detection
+
+```
+### 🖥️ 3. Run the Application
+```bash
+python app.py
+
+```
+Then open your browser and go to:
+```
 http://localhost:5000/
+```
+### 🧪 4. Use the Interface
+![image](https://github.com/user-attachments/assets/4cdd6e80-8c24-499b-bfab-355ca6bdb26b)
 
-🧪 4. Use the Interface
-Upload Image (JPG/PNG) → System detects and highlights organic waste → Displays result with confidence scores
+---
 
-📊 Model Accuracy
+## 📊 Model Performance
+| Metric           | Value    |
+|------------------|----------|
+| Precision        | 96.70%   |
+| Recall           | 90.88%   |
+| mAP@0.5          | 96.87%   |
+| mAP@0.5:0.95     | 89.77%   |
+| Fitness Score    | 90.48%   |
 
-Precision: 96.70%
+---
 
-Recall: 90.88%
-
-mAP@0.5: 96.87%
-
-mAP@0.5:0.95: 89.77%
-
-Fitness Score: 90.48%
-
-🌟 System Features
-🖼️ Image upload with annotated detection
-⚡ Fast and responsive detection using YOLOv8
-📊 Display of bounding boxes and class confidence
-🧘 Responsive UI (desktop/mobile friendly)
-
-🖼️ UI Preview
-![image](https://github.com/user-attachments/assets/30986cfd-e6b5-436e-aeae-8fd0c92a84a7)
-
-
-👩‍💻 Developed By
-Qonita Milla Hanifa
+## 👩‍💻 Developed By
+Rantika Darmayanti Br Pasaribu
 Final Year Project – 2025
-Smart Waste Classification using YOLOv8 & Flask
+"Organic Waste Detection System Using YOLOv8"
 
-📌 Suggestions for Future Work
 
-Expand to multi-class detection (inorganic vs organic)
-
-Integrate database for logging detections
-
-Add camera support for real-time detection
-
-Deploy to edge devices for field usage (e.g., trash sorting machines)
