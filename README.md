@@ -1,7 +1,8 @@
-🗑️ Organic Waste Detection System Using YOLOv8
+**#🗑️ Organic Waste Detection System Using YOLOv8**
+
 A smart web-based image classification system to automatically detect and classify organic waste using state-of-the-art YOLOv8 object detection models. The system helps support sustainable waste management by providing instant detection from user-uploaded images.
 
-🧱 Background
+#🧱 Background
 Waste management is a major challenge in urban areas. Improper separation of organic and non-organic waste leads to increased environmental impact and inefficiencies in recycling. This project introduces a computer vision-based solution to assist in classifying waste by detecting organic materials from images automatically.
 
 🎯 Objectives
